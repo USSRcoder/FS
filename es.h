@@ -90,21 +90,21 @@ struct FComponent {
 const int comp_header_size = sizeof(FComponent);
 
 //typedef std::deque<int> offsets;
-// 1. порядок элементов определяется контейнером. (сортированные или не сортированные)
+// 1. РїРѕСЂСЏРґРѕРє СЌР»РµРјРµРЅС‚РѕРІ РѕРїСЂРµРґРµР»СЏРµС‚СЃСЏ РєРѕРЅС‚РµР№РЅРµСЂРѕРј. (СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ РёР»Рё РЅРµ СЃРѕСЂС‚РёСЂРѕРІР°РЅРЅС‹Рµ)
 //
-// 2. для перечеслений
+// 2. РґР»СЏ РїРµСЂРµС‡РµСЃР»РµРЅРёР№
 //		
-//		Всех entity с типом t			Index_Fast,	Index_Flat, Index_3, Index_Full
-//		Всех компонентов типа t			Index_Fast,	Index_Flat, Index_3, Index_Full
-//		Всех компонентов типов t..tn	Index_Fast,	Index_Flat, Index_3, Index_Full
-//		Набора Entity					Index_Fast,	Index_Flat, Index_3, Index_Full
+//		Р’СЃРµС… entity СЃ С‚РёРїРѕРј t			Index_Fast,	Index_Flat, Index_3, Index_Full
+//		Р’СЃРµС… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ С‚РёРїР° t			Index_Fast,	Index_Flat, Index_3, Index_Full
+//		Р’СЃРµС… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ С‚РёРїРѕРІ t..tn	Index_Fast,	Index_Flat, Index_3, Index_Full
+//		РќР°Р±РѕСЂР° Entity					Index_Fast,	Index_Flat, Index_3, Index_Full
 //
-// 3. для поиска
+// 3. РґР»СЏ РїРѕРёСЃРєР°
 //		
-//		Всех entity с типом t			Index_Fast,	Index_Flat, Index_3, Index_Full
-//		Всех компонентов типа t			Index_Fast,	Index_Flat, Index_3, Index_Full
-//		Всех компонентов типов t..tn	Index_Fast,	Index_Flat, Index_3, Index_Full
-//		Набора Entity					Index_Fast,	Index_Flat, Index_3, Index_Full
+//		Р’СЃРµС… entity СЃ С‚РёРїРѕРј t			Index_Fast,	Index_Flat, Index_3, Index_Full
+//		Р’СЃРµС… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ С‚РёРїР° t			Index_Fast,	Index_Flat, Index_3, Index_Full
+//		Р’СЃРµС… РєРѕРјРїРѕРЅРµРЅС‚РѕРІ С‚РёРїРѕРІ t..tn	Index_Fast,	Index_Flat, Index_3, Index_Full
+//		РќР°Р±РѕСЂР° Entity					Index_Fast,	Index_Flat, Index_3, Index_Full
 
 struct Index_Flat{
 	int entityOfs;
@@ -260,7 +260,7 @@ struct FEntitys {
 			assert(s>=0);
 
 			first = data;					// Update pointers;
-			last = data + s;				// Update cursor; Курсор не собьется, при realloce
+			last = data + s;				// Update cursor; РљСѓСЂСЃРѕСЂ РЅРµ СЃРѕР±СЊРµС‚СЃСЏ, РїСЂРё realloce
 			freeMem = allocated - s;
 
 			assert(freeMem >= 0);
@@ -302,10 +302,10 @@ struct FEntitys {
 	}
 
 	// =====================================================
-	// Добавляет entity Размером size;
-	// * id должен быть уникальным
-	// * проверяет наличие в кеше свободных блоков
-	// * вставляет в найденный свободный блок или в конец 
+	// Р”РѕР±Р°РІР»СЏРµС‚ entity Р Р°Р·РјРµСЂРѕРј size;
+	// * id РґРѕР»Р¶РµРЅ Р±С‹С‚СЊ СѓРЅРёРєР°Р»СЊРЅС‹Рј
+	// * РїСЂРѕРІРµСЂСЏРµС‚ РЅР°Р»РёС‡РёРµ РІ РєРµС€Рµ СЃРІРѕР±РѕРґРЅС‹С… Р±Р»РѕРєРѕРІ
+	// * РІСЃС‚Р°РІР»СЏРµС‚ РІ РЅР°Р№РґРµРЅРЅС‹Р№ СЃРІРѕР±РѕРґРЅС‹Р№ Р±Р»РѕРє РёР»Рё РІ РєРѕРЅРµС† 
 	// 
 
 	FEntity& Add(int size,int id) {
