@@ -12,4 +12,4 @@ es.cpp - test app, win msvc15,  SMFL+openGL; control keys: *-+0
 
 es.cpp - Наглядный тест, MSvc15, SMFL. Управление : *-+0
 
-![](thumb.jpg)
+<img src="https://raw.githubusercontent.com/USSRcoder/FS/master/thumb.png">
