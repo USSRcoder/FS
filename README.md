@@ -53,7 +53,7 @@ Index можно перестроить по куче, его можно не с
 <i>TO DO</i>
 -resize выделенного блока.
 
-es.cpp - Наглядный тест, MSvc15, SMFL. Управление: numpad *-+79 [0] - Авто
+es.cpp - Наглядный тест, MSvc15, SFML-2.3.2. Управление: numpad *-+79 [0] - Авто
 </pre>
 
 <img src="https://raw.githubusercontent.com/USSRcoder/FS/master/thumb.png">
